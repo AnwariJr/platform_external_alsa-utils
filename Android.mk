@@ -98,13 +98,13 @@ include $(CLEAR_VARS)
 
 ALSAINIT_DIR := $(TARGET_OUT)/usr/share/alsa/init
 
-files := $(addprefix $(ALSAINIT_DIR)/,00main default hda help info test)
-
-$(files): PRIVATE_MODULE := alsactl_initdir
-$(files): $(ALSAINIT_DIR)/%: $(LOCAL_PATH)/alsactl/init/% | $(ACP)
-	$(transform-prebuilt-to-target)
-
-ALL_PREBUILT += $(files)
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/alsactl/init/00main:system/usr/share/alsa/init/00main \
+        $(LOCAL_PATH)/alsactl/init/default:system/usr/share/alsa/init/default \
+        $(LOCAL_PATH)/alsactl/init/hda:system/usr/share/alsa/init/hda \
+        $(LOCAL_PATH)/alsactl/init/help:system/usr/share/alsa/init/help \
+        $(LOCAL_PATH)/alsactl/init/info:system/usr/share/alsa/init/info \
+        $(LOCAL_PATH)/alsactl/init/test:system/usr/share/alsa/init/test
 
 endif
 endif
