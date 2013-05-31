@@ -94,18 +94,5 @@ LOCAL_SHARED_LIBRARIES := \
 
 include $(BUILD_EXECUTABLE)
 
-include $(CLEAR_VARS)
-
-ALSAINIT_DIR := $(TARGET_OUT)/usr/share/alsa/init
-
-$(info WARNING: PRODUCT_COPY_FILES disabled in $(LOCAL_PATH))
-#PRODUCT_COPY_FILES += \
-#        $(LOCAL_PATH)/alsactl/init/00main:system/usr/share/alsa/init/00main \
-#        $(LOCAL_PATH)/alsactl/init/default:system/usr/share/alsa/init/default \
-#        $(LOCAL_PATH)/alsactl/init/hda:system/usr/share/alsa/init/hda \
-#        $(LOCAL_PATH)/alsactl/init/help:system/usr/share/alsa/init/help \
-#        $(LOCAL_PATH)/alsactl/init/info:system/usr/share/alsa/init/info \
-#        $(LOCAL_PATH)/alsactl/init/test:system/usr/share/alsa/init/test
-
 endif
 endif
